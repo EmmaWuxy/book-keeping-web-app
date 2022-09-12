@@ -17,7 +17,15 @@ root.render(
   <Routes>
     <Route path="/" element={<App />}>
       <Route path="expenses" element={<Expense />} />
-      <Route path="invoices" element={<Invoices />} >
+      <Route path="invoices" element={<Invoices />}>
+        <Route
+          index
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>Select an invoice</p>
+            </main>
+          }
+        />
         <Route path=":invoiceId" element={<Invoice />}/>
       </Route>
       <Route
